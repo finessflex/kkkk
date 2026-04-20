@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Главная</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            header
+        </div>
+        <div id="container">
+            <div id="sidebar">
+                <ul>
+                    {% for b in breeds %}
+                        <li><a href="/breed/{{ b.id }}">{{ b.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="content">
+                <ul>
+                    {% for d in dogs %}
+                        <li><a href="/dog/{{ d.id }}">{{ d.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            footer
+        </div>
+    </div>
+</body>
+</html>
